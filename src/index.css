@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Poppins:wght@400;600;700&display=swap');
+@import "tailwindcss";
+
+@theme{
+  --color-primary: #00BBEE;
+  --color-secondary:#666666;  
+  --color-tertiary: #CFE5FC;
+  --color-gray: #F7F8FA;
+  --color-accent:#CFE5FC;
+  --color-hero:#EBF1F8;
+  --font-primary: 'Poppins', sans-serif;
+  --font-secondary: 'Lato', sans-serif;  
+}
+
+
+
+
+
+h1, h2, h3, button {
+  font-family: var(--font-primary);
+}
+
+p,li{
+  font-family: var(--font-secondary);
+}
