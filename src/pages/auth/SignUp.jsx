@@ -2,7 +2,7 @@ import React from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import Logo from "../../assets/logo.png"
-// import image from "../../assets/header-img (1).png"
+import image from "../../assets/header-img (1).png"
 
 const SignUp = () => {
   const validationSchema = Yup.object({
@@ -39,20 +39,37 @@ const SignUp = () => {
                                  </div>
                                  <h1 className='text-blue-950 font-bold text-2xl'><span className='text-hero '>Med</span>ARK</h1>
                                 </div>
-              {/* <h1 className="text-[60px] text-white font-extrabold">JOIN US</h1>
-              <h3 className="w-[60%] text-center text-[20px] font-semibold text-white">
-                To keep connected with us, please Sign up with your personal
-                info
-              </h3> */}
+                                 <h1 className="text-[30px] text-white font-extrabold">
+                                              JOIN US
+                                            </h1>
+                                            <h3 className="w-[60%] text-center text-[16px] font-semibold text-white">
+                                              To keep connected with us, please Sign Up with your personal info
+                                            </h3>
+                                                  <img src= {image} alt="" className="w-[80%]"/>
+            
             </div>
 
             <form
               onSubmit={formik.handleSubmit}
               className="h-full w-[50%] bg-white p-5 flex flex-col justify-around items-center rounded-r-[10px] max-[769px]:w-[65%] max-[769px]:h-[100%] max-[769px]:rounded-[10px]"
             >
-              <h1 className="text-[50px] font-medium text-blue-400 max-[769px]:text-[30px] font-serif ">
+                <div className='flex items-center '>
+                                <div className='  flex items-center justify-center '>
+                                   <img src={Logo} alt=""  className='size-17  object-contain'/>
+                                 </div>
+                                 <h1 className='text-blue-950 font-bold text-2xl'><span className='text-primary '>Med</span>ARK</h1>
+                                </div>
+                              <div className="flex justify-center items-center flex-col">
+                              <h1 className="text-[50px] text-primary">
+                            CREATE ACCOUNT
+                          </h1>
+                          <h3 className="w-[90%] text-center text-[16px] font-semibold text-primary">
+                           Welcome Create account to join us
+                          </h3>
+                              </div>
+              {/* <h1 className="text-[50px] font-medium text-blue-400 max-[769px]:text-[30px] font-serif ">
                 Sign Up
-              </h1>
+              </h1> */}
 
               <div className="flex flex-col w-[90%] gap-2">
                 <label htmlFor="name" className="text-[20px] font-semibold">
@@ -103,7 +120,7 @@ const SignUp = () => {
                 )}
               </div>
 
-              <div className="flex flex-col gap-4 items-center w-full">
+              <div className="flex flex-col gap-4 items-center w-full mt-[20px]">
                 <button
                   type="submit"
                   className="h-12 w-[90%] bg-blue-400 rounded-lg text-[20px] font-semibold text-white hover:bg-blue-600 transition"
