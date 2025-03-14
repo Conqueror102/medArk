@@ -4,7 +4,7 @@ import Button from '../components/Button'
 import { Link } from 'react-router-dom'
 const Header = () => {
   return (
-    <div className='w-full bg-white shadow-md px-10 py-2 flex justify-between items-center sticky top-0 z-50'>
+    <div className='w-full bg-white shadow-md px-20 py-1 flex justify-between items-center sticky top-0 z-50'>
       <Link to="/">
       <div className='flex items-center '>
        <div className='  flex items-center justify-center '>
@@ -16,13 +16,13 @@ const Header = () => {
 
      <div className='flex space-x-5 items-center'>
      <nav className='flex justify-center '>
-        <ul className='flex space-x-8  font-semibold'>
+        <ul className='flex space-x-8  font-semibold text-tertiary'>
           <Link to="/"><li className=' hover:text-primary'>Home</li></Link>
          <Link to="about"><li className=' hover:text-primary'>About Us</li></Link>
-         <Link to="service"><li className=' hover:text-primary'>Service</li></Link>
          <Link to="jobs"><li className=' hover:text-primary'>Jobs</li></Link>
           <Link to="hospitals"><li className=' hover:text-primary'>Hospitals</li></Link>
          <Link to="staff"><li className=' hover:text-primary'>Staffs</li></Link>
+         <Link to="service"><li className=' hover:text-primary'>Service</li></Link>
         </ul>
       </nav>
 
