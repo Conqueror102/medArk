@@ -18,7 +18,7 @@ const LandingPage = () => {
           <p className='text-md max-sm:text-center text-secondary'>
             Find the right healthcare professionals for your hospital or discover your next job opportunity—all in one smart, AI-powered platform.
           </p>
-          <div className='flex gap-3 mt-7'>
+          <div className='flex gap-3 mt-7 max-sm:pb-4'>
             <Button text='Find Jobs' className='bg-primary text-white' />
             <Button text='Post Jobs' className='bg-accent text-primary' />
           </div>
@@ -33,7 +33,7 @@ const LandingPage = () => {
         <div className='flex justify-center items-center flex-col py-10 bg-accent'>
           <p className='font-semibold text-primary text-lg'>Working Process</p>
           <h1 className='text-4xl font-bold pt-4 text-tertiary p-6'>How it Works</h1>
-          <div className='grid grid-cols-1 md:grid-cols-3 gap-4'>
+          <div className='grid grid-cols-1 md:grid-cols-3 gap-4 max-sm:p-5'>
             <Steps number='01' icon={icon1} text1='Register your Account' text2='' className='bg-[#3898E2]' />
             <Steps number='02' icon={icon2} text1='Upload your Credentials' text2='' className='bg-[#BC84CA]' />
             <Steps number='03' icon={icon3} text1='Register your Account' text2='' className='bg-[#56D8B1]' />

@@ -10,7 +10,7 @@ const Steps = ({ number, icon, text1, text2, className }) => {
             <img src={icon} alt='' className='w-10 h-12 md:w-15 md:h-18 object-contain' />
           </div>
           <div className={`p-5  rounded-lg w-full text-white font-semibold text-lg ${className}`}>
-            <p className='pl-5 max-sm:ml-13 max-sm:text-[15px]'>{text1}</p>
+            <p className='pl-25  max-sm:text-[15px] text-[18px]'>{text1}</p>
           </div>
         </div>
         <p className='mt-14'>{text2}</p>
