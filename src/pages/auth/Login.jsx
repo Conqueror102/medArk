@@ -1,7 +1,7 @@
 import React from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import Logo from "../../assets/logo.png"
+import pogo from "../../assets/logo.png"
 import image from "../../assets/header-img (1).png"
 
 const Login = () => {
@@ -27,7 +27,7 @@ const Login = () => {
           <div className="h-[80%] w-[50%] bg-blue-400 rounded-l-[10px] max-[769px]:hidden flex justify-center items-center flex-col">
            <div className='flex items-center '>
                   <div className='  flex items-center justify-center '>
-                     <img src={Logo} alt=""  className='size-17  object-contain'/>
+                     <img src={pogo} alt=""  className='size-17  object-contain'/>
                    </div>
                    <h1 className='text-blue-950 font-bold text-2xl'><span className='text-hero '>Med</span>ARK</h1>
                   </div>
