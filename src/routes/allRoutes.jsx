@@ -9,6 +9,9 @@ import SignUp from '../pages/auth/SignUp'
 import UserLayout from '../layout/UserLayout'
 import Login from '../pages/auth/Login'
 import Jobs from '../pages/Jobs'
+import UserDashLayout from '../layout/UserDashLayout'
+import UserDashboard from '../pages/users/UserDashboard'
+import SignUpAs from '../pages/SignUpAs'
 
 const AllRoutes = () => {
   return (
@@ -22,9 +25,18 @@ const AllRoutes = () => {
                 <Route path='staff' element={<Staffs/>}/>
                 <Route path='service' element={<Service/>}/>
                 <Route path='jobs' element={<Jobs/>}/>
+                <Route path='signUpAs' element={<SignUpAs/>}/>
             </Route>
+
+            {/* auth */}
             <Route path='signup' element={<SignUp/>}/>
             <Route path='auth' element={<Login/>}/>
+
+            {/* user dashboard */}
+
+            <Route path='/userdash' element={<UserDashLayout/>}>
+                <Route index element={<UserDashboard/>}/>
+            </Route>
         </Routes>
         </BrowserRouter>
     </div>
