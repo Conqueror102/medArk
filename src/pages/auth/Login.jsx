@@ -46,7 +46,7 @@ const Login = () => {
           >
                <div className='flex items-center '>
                   <div className='  flex items-center justify-center '>
-                     <img src={Logo} alt=""  className='size-17  object-contain'/>
+                     <img src={pogo} alt=""  className='size-17  object-contain'/>
                    </div>
                    <h1 className='text-blue-950 font-bold text-2xl'><span className='text-primary '>Med</span>ARK</h1>
                   </div>
