@@ -30,8 +30,8 @@ const SignUp = () => {
   });
   return (
     <>
-      <div className="h-screen w-full flex justify-center items-center bg-blue-200">
-        <div className="h-[80%] w-[70%] flex justify-center items-center bg-primary rounded-[15px] max-[769px]:w-[90%]  max-[769px]:h-[95%]  max-[769px]:bg-blue-200">
+      <div className="h-screen w-[100%] flex justify-center items-center bg-blue-200 max-[769px]:w-[100%]">
+        <div className="h-[80%] w-[70%] flex justify-center items-center bg-primary rounded-[15px] max-[769px]:w-[600px]  max-[769px]:h-[95%]  max-[769px]:bg-blue-200">
           <div className="h-[80%] w-[50%] bg-primary rounded-l-[10px] max-[769px]:hidden flex justify-center items-center flex-col">
             <Link to="/">
               <div className="flex items-center ">
