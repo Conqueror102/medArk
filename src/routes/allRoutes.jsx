@@ -12,6 +12,7 @@ import Jobs from '../pages/Jobs'
 import UserDashLayout from '../layout/UserDashLayout'
 import UserDashboard from '../pages/users/UserDashboard'
 import SignUpAs from '../pages/SignUpAs'
+import HospitalSignUp from '../pages/auth/HospitalSignUp'
 
 const AllRoutes = () => {
   return (
@@ -31,6 +32,7 @@ const AllRoutes = () => {
             {/* auth */}
             <Route path='signup' element={<SignUp/>}/>
             <Route path='auth' element={<Login/>}/>
+            <Route path='hospitalSignUp' element={<HospitalSignUp/>}/>
 
             {/* user dashboard */}
 

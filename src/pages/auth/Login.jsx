@@ -4,8 +4,12 @@ import * as Yup from "yup";
 import pogo from "../../assets/logo.png";
 import image from "../../assets/header-img (1).png";
 import { Link } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
+
 
 const Login = () => {
+  // const navigate = useNavigate();
+
   const validationSchema = Yup.object({
     email: Yup.string().email("Invalid Email").required("Email is required"),
     password: Yup.string()
@@ -21,6 +25,13 @@ const Login = () => {
       alert("Login Successful");
     },
   });
+  // const navigateBack = () => {
+  //   navigate(-1);
+  // };
+
+  // const navigateToHome = () => {
+  //   navigate("/");
+  // };
   return (
     <>
       <div className="h-screen w-full flex justify-center items-center bg-blue-200">
