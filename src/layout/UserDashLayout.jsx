@@ -7,8 +7,10 @@ const UserDashLayout = () => {
   return (
     <div className='flex'>
     <UserSideBer/>
-    <DashBoardHeader/>
-    {<Outlet/>}
+  <div className='w-full'>
+  <DashBoardHeader/>
+  {<Outlet/>}
+  </div>
     </div>
   )
 }
