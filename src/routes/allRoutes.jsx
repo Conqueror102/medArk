@@ -36,6 +36,7 @@ const AllRoutes = () => {
             {/* auth */}
             <Route path='signup' element={<SignUp/>}/>
             <Route path='auth' element={<Login/>}/>
+            <Route path='hospitalSignUp' element={<HospitalSignUp/>}/>
 
             {/* user dashboard */}
 
