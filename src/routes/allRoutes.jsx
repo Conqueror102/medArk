@@ -18,6 +18,7 @@ import Applied from '../pages/users/Applied'
 import SavedJobs from '../pages/users/SavedJobs'
 import Notification from '../pages/users/Notification'
 import HospitalSignUp from '../pages/auth/HospitalSignUp'
+import ContactUs from '../pages/ContactUs'
 
 const AllRoutes = () => {
   return (
@@ -32,6 +33,7 @@ const AllRoutes = () => {
                 <Route path='service' element={<Service/>}/>
                 <Route path='jobs' element={<Jobs/>}/>
                 <Route path='signUpAs' element={<SignUpAs/>}/>
+                <Route path='contact' element={<ContactUs/>}/>
             </Route>
 
             {/* auth */}
