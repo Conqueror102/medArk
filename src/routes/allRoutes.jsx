@@ -17,6 +17,7 @@ import Findjobs from '../pages/users/Findjobs'
 import Applied from '../pages/users/Applied'
 import SavedJobs from '../pages/users/SavedJobs'
 import Notification from '../pages/users/Notification'
+import HospitalSignUp from '../pages/auth/HospitalSignUp'
 
 const AllRoutes = () => {
   return (
