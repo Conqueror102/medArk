@@ -12,7 +12,13 @@ import Jobs from '../pages/Jobs'
 import UserDashLayout from '../layout/UserDashLayout'
 import UserDashboard from '../pages/users/UserDashboard'
 import SignUpAs from '../pages/SignUpAs'
+import Profile from '../pages/users/Profile'
+import Findjobs from '../pages/users/Findjobs'
+import Applied from '../pages/users/Applied'
+import SavedJobs from '../pages/users/SavedJobs'
+import Notification from '../pages/users/Notification'
 import HospitalSignUp from '../pages/auth/HospitalSignUp'
+import ContactUs from '../pages/ContactUs'
 
 const AllRoutes = () => {
   return (
@@ -27,6 +33,7 @@ const AllRoutes = () => {
                 <Route path='service' element={<Service/>}/>
                 <Route path='jobs' element={<Jobs/>}/>
                 <Route path='signUpAs' element={<SignUpAs/>}/>
+                <Route path='contact' element={<ContactUs/>}/>
             </Route>
 
             {/* auth */}
@@ -38,6 +45,11 @@ const AllRoutes = () => {
 
             <Route path='/userdash' element={<UserDashLayout/>}>
                 <Route index element={<UserDashboard/>}/>
+                <Route path='profile' element={<Profile/>}/>
+                <Route path='findjob' element={<Findjobs/>}/>
+                <Route path='applied' element={<Applied/>}/>
+                <Route path='notification' element={<Notification/>}/>
+                <Route path='savedjob' element={<SavedJobs/>}/>
             </Route>
         </Routes>
         </BrowserRouter>
