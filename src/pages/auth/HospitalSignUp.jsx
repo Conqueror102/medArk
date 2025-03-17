@@ -132,7 +132,7 @@ const HospitalSignUp = () => {
                 Already have an account?{" "}
                <Link to="/auth  ">
                <span className="text-blue-400 cursor-pointer text-[20px]">
-                  Sign Up
+                  Sign In
                 </span>
                </Link>
               </p>

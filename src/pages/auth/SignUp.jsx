@@ -122,15 +122,15 @@ const SignUp = () => {
             <div className="flex flex-col items-center w-full mt-[20px]">
               <button
                 type="submit"
-                className="h-10 w-[90%] bg-blue-400 rounded-lg text-[20px] font-semibold text-white hover:bg-primary transition"
+                className="h-10 w-[90%] bg-blue-400 rounded-lg text-[12px] text-white hover:bg-primary transition"
               >
                 Sign Up
               </button>
-              <p className="text-[16px] font-semibold">
+              <p className="text-[12px] font-semibold mt-[10px]">
                 Already have an account?{" "}
                <Link to="/auth  ">
-               <span className="text-blue-400 cursor-pointer text-[20px]">
-                  Sign Up
+               <span className="text-blue-400 cursor-pointer text-[12px]">
+                  Login
                 </span>
                </Link>
               </p>

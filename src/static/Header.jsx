@@ -61,7 +61,7 @@ const Header = () => {
     
         
           <div
-            className={`fixed top-12 left-0 w-3/4 h-full bg-white shadow-lg z-50 hidden max-md:flex flex-col ${isOpen === true ? "translate-x-[0px]" : "-translate-x-[250px]"} transition duration-500 ease-in-out`}
+            className={`fixed top-12 left-0 w-3/4 h-full bg-white shadow-lg z-50 hidden max-md:flex flex-col ${isOpen === true ? "translate-x-[0px]" : "-translate-x-[550px]"} transition duration-500 ease-in-out`}
             onClick={(e) => e.stopPropagation()}
           >
             <ul className="flex flex-col  font-semibold cursor-pointer text-tertiary  text-lg p-5">
