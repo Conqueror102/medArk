@@ -9,8 +9,8 @@ const Cards = ({icon, heading, content,postJob}) => {
           <div className="h-[20%] w-[20%] bg-primary flex justify-center items-center rounded-[6px]">
             {icon}
           </div>
-          <h1 className="text-[18px] text-center font-bold text-tertiary">{heading}</h1>
-          <p className="text-start text-[13px] font-semibold text-gray-400 ">
+          <h1 className="text-[16px] text-center text-tertiary font-semibold">{heading}</h1>
+          <p className="text-[12px] text-gray-400 text-center">
            {content}
           </p>
           <p className="text-[18px] text-primary font-semibold">{postJob}</p>
