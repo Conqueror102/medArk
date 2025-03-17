@@ -8,8 +8,8 @@ const LandingPageCards = ({icons, headings, contents}) => {
             <div className='h-[25%] w-[25%] flex justify-center items-center'>
             {icons}
             </div>
-            <h1 className='font-semibold text-secondary'>{headings}</h1>
-            <p className='text-[18px] text-tertiary font-semibold text-center'>{contents}</p>
+            <h1 className='text-secondary text-[12px]'>{headings}</h1>
+            <p className='text-[16px] text-tertiary font-semibold text-center'>{contents}</p>
         </div>
     </div>
     </>
