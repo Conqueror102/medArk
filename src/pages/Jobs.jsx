@@ -1,6 +1,6 @@
 import React from "react";
 import Search from "../components/Search";
-import logo from "../assets/logo.png";
+// import logo from "../assets/logo.png";
 import { MdLocalHospital } from "react-icons/md";
 import Button from "../components/Button";
 import { FaUserDoctor } from "react-icons/fa6";

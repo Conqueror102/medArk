@@ -86,6 +86,7 @@ export const userSlice = createApi({
     getJobById: builder.query({
       query: (jobId) => `/JobCreate/oneJob/${jobId}`,  // This fetches ONE job
     }),
+    
   }),
 });
 

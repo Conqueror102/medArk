@@ -2,9 +2,9 @@ import React from 'react'
 import StaffCard from '../components/StaffCard'
 import PageHead from '../components/PageHead'
 import hospital1 from "../assets/images.jpg";
-import hospital2 from "../assets/images1.png";
-import hospital3 from "../assets/imge.jpg";
-import hospital4 from "../assets/logos.png";
+// import hospital2 from "../assets/images1.png";
+// import hospital3 from "../assets/imge.jpg";
+// import hospital4 from "../assets/logos.png";
 import Search from '../components/Search';
 
 const Staffs = () => {
