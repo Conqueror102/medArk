@@ -1,9 +1,9 @@
 import React from 'react'
 import Button from './Button'
 
-const Card = ({logo, jobType, hosName, address, locum, time }) => {
+const Card = ({logo, jobType, hosName, address, locum, time,className }) => {
   return (
-    <div className='p-5 shadow-md rounded-md border border-gray-200 bg-white'>
+    <div className={`${className} p-5 shadow-md rounded-md border border-gray-200 bg-white`}>
       <div>
      <div className='flex  justify-between'>
      <div className=' w-20 rounded-md p-4 mb-3 shadow-primary/10 border-gray-200 border shadow-lg'>

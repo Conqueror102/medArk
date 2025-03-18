@@ -44,7 +44,7 @@ const SignUp = () => {
               </div>
             </Link>
             <h1 className="text-[30px] text-white font-extrabold">CREATE ACCOUNT</h1>
-            <h3 className="w-[60%] text-center text-[16px] font-semibold text-white">
+            <h3 className="w-[60%] text-center text-[12px] font-semibold text-white">
               To keep connected with us, please Sign Up with your personal info
             </h3>
             <img src={image} alt="" className="w-[85%] h-[80%]" />

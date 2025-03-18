@@ -45,8 +45,8 @@ const HospitalSignUp = () => {
                 </h1>
               </div>
             </Link>
-            <h1 className="text-[30px] text-white font-extrabold">CREATE ACCOUNT</h1>
-            <h3 className="w-[60%] text-center text-[16px] font-semibold text-white">
+            <h1 className="text-[20px] text-white font-extrabold">CREATE ACCOUNT</h1>
+            <h3 className="w-[60%] text-center text-[12px] font-semibold text-white">
               To keep connected with us, please Sign Up with your personal info
             </h3>
             <img src={image} alt="" className="w-[85%] h-[80%]" />
@@ -124,14 +124,14 @@ const HospitalSignUp = () => {
             <div className="flex flex-col items-center w-full mt-[20px]">
               <button
                 type="submit"
-                className="h-10 w-[90%] bg-blue-400 rounded-lg text-[20px] font-semibold text-white hover:bg-primary transition"
+                className="h-10 w-[90%] bg-blue-400 rounded-lg text-[14px] font-semibold text-white hover:bg-primary transition"
               >
                 Sign Up
               </button>
-              <p className="text-[16px] font-semibold">
+              <p className="text-[14px] font-semibold mt-[10px]">
                 Already have an account?{" "}
                <Link to="/auth  ">
-               <span className="text-blue-400 cursor-pointer text-[20px]">
+               <span className="text-blue-400 cursor-pointer text-[14px]">
                   Sign In
                 </span>
                </Link>

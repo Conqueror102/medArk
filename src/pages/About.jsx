@@ -9,7 +9,7 @@ const About = () => {
         <div className="h-[50vh] w-[100%] flex justify-center items-center bg-primary font-primary ">
           <div className="h-[90%] w-[88%] flex items-center ">
             <h1 className="text-[55px] text-tertiary font-bold mb-7">
-              About Us
+              ABOUT US
             </h1>
           </div>
         </div>

@@ -11,8 +11,15 @@ import { FaHandHoldingMedical } from "react-icons/fa";
 
 const Service = () => {
   return (
-    <div className="h-[86.4vh] w-[100%] mt-[10px] flex justify-center items-center ">
-      <div className="h-[90%] w-[88%] flex flex-wrap gap-6 max-[769px]:w-[100%]">
+    <div className="w-[100%] mt-[0px] flex justify-center items-center flex-col">
+      <div className="h-[50vh] w-[100%] bg-primary flex justify-center items-center">
+        <div className="h-[90%] w-[88%] flex items-center">
+        <h1 className="text-[55px] text-tertiary font-bold mb-7">
+              OUR SERVICES
+            </h1>
+        </div>
+      </div>
+      <div className="h-[90vh] w-[88%] flex flex-wrap mt-[25px] gap-6 max-[769px]:w-[100%]">
         <Cards
           icon={<IoNotificationsCircleSharp size={40} fill="#EBF1F8" />}
           heading="Find Qualified Healthcare Professionals"

@@ -3,8 +3,8 @@ import React from 'react'
 const LandingPageCards = ({icons, headings, contents}) => {
   return (
     <>
-    <div className='h-[50%] w-[23%] bg-white rounded-[10px] border-gray-200 border-2 flex justify-center items-center hover:bg-primary hover:text-white'>
-        <div className='h-[90%] w-[90%] flex flex-col justify-around items-center'>
+    <div className='h-[50%] w-[23%] flex justify-center items-center hover:bg-primary hover:text-white'>
+        <div className='h-[90%] w-[90%] flex flex-col j bg-white rounded-[10px] border-gray-200 border-2 justify-around items-center'>
             <div className='h-[25%] w-[25%] flex justify-center items-center'>
             {icons}
             </div>

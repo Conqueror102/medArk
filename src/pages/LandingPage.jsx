@@ -5,7 +5,7 @@ import Steps from "../components/steps";
 import icon1 from "../assets/icon1.png";
 import icon2 from "../assets/icon2.png";
 import icon3 from "../assets/icon3.png";
-import LandingPageCard from "./LandingPageCards";
+import LandingPageCard from "../components/LandingPageCards";
 import { FaUserDoctor } from "react-icons/fa6";
 import { FaStamp } from "react-icons/fa6";
 import { RiContractLine } from "react-icons/ri";
@@ -14,6 +14,19 @@ import { FaPeopleGroup } from "react-icons/fa6";
 import { FaPeopleArrows } from "react-icons/fa";
 import { TbHomeStats } from "react-icons/tb";
 import { FaAmbulance } from "react-icons/fa";
+import hospitalLogo1 from "../assets/hospitalLogo10.jpg";
+import hospitalLogo2 from "../assets/hospitalLogo14.jpg";
+import hospitalLogo3 from "../assets/hospitalLogo16.jpg";
+import hospitalLogo4 from "../assets/hospitalLogo8.jpg";
+import Card from "../components/Card";
+import HospitalComponent from "../components/hospitalComponent";
+import logo from "../assets/hospitalLogo2.jpg";
+import { IoNotificationsCircleSharp } from "react-icons/io5";
+import { FcProcess } from "react-icons/fc";
+import { PiEqualizerFill } from "react-icons/pi";
+import aboutImage from "../assets/perfectImgae.avif";
+
+import Cards from "./Cards";
 
 const LandingPage = () => {
   return (
@@ -82,7 +95,9 @@ const LandingPage = () => {
       </section>
       <section>
         <div className="h-[100vh] w-[100%] flex justify-center items-center flex-col mt-[30px]">
-          <h1 className="mb-[20px] text-[30px] font-extrabold text-primary underline">CATEGORIES</h1>
+          <h1 className="mb-[20px] text-[30px] font-extrabold text-primary underline">
+            CATEGORIES
+          </h1>
           <div className="h-[90%] w-[90%] flex flex-wrap gap-8">
             <LandingPageCard
               icons={<FaUserDoctor size={60} fill="#172657" />}
@@ -127,8 +142,168 @@ const LandingPage = () => {
           </div>
         </div>
       </section>
+      <section>
+        <div className="h-[70vh] w-[100%] mt-[120px] flex justify-center items-center flex-col gap-10">
+          <div className="flex justify-center items-center flex-col">
+            <h1 className="text-[25px] font-bold mb-[17px] text-primary underline">
+              Popular Jobs
+            </h1>
+            <p className="w-[55%] text-center text-tertiary">
+              Search all the open positions on the web. Get your own
+              personalized salary estimate. Read reviews on over 30000+
+              companies worldwide.
+            </p>
+          </div>
+          <div className="h-[90%] w-[90%] flex gap-8">
+            <Card
+              className="h-[90%] w-[23%]"
+              logo={logo}
+              jobType="Assistant doctor"
+              hosName="Adoba hospital"
+              address="Lagos"
+              locum="FullTime"
+              time="20/10/2015"
+            />
+            <Card
+              className="h-[90%] w-[23%]"
+              logo={logo}
+              jobType="Assistant doctor"
+              hosName="Adoba hospital"
+              address="Lagos"
+              locum="FullTime"
+              time="20/10/2015"
+            />
+            <Card
+              className="h-[90%] w-[23%]"
+              logo={logo}
+              jobType="Assistant doctor"
+              hosName="Adoba hospital"
+              address="Lagos"
+              locum="FullTime"
+              time="20/10/2015"
+            />
+            <Card
+              className="h-[90%] w-[23%]"
+              logo={logo}
+              jobType="Assistant doctor"
+              hosName="Adoba hospital"
+              address="Lagos"
+              locum="FullTime"
+              time="20/10/2015"
+            />
+          </div>
+        </div>
+      </section>
+      <section>
+        <div className="h-[60vh] w-[100%] mt-[30px] flex justify-center items-center flex-col">
+          <div className="h-[20%] w-[90%] flex justify-center items-center text-[20px] font-semibold text-primary">
+            <h1 className="underline">HIRING HOSPITALS</h1>
+          </div>
+          <div className="h-[80%] w-[90%] flex gap-8 mb-[20px]">
+            <HospitalComponent
+              image={hospitalLogo1}
+              hospitalName="Mediplus Premier Hospital"
+              hospitalAddress="14 Galovita street Odonla Lagos State"
+            />
+            <HospitalComponent
+              image={hospitalLogo2}
+              hospitalName="Vision Eye Clinic Hospital"
+              hospitalAddress="14 Galovita street Odonla Lagos State"
+            />
+            <HospitalComponent
+              image={hospitalLogo3}
+              hospitalName="Ear Clinic Hospital"
+              hospitalAddress="14 Galovita street Odonla Lagos State"
+            />
+            <HospitalComponent
+              image={hospitalLogo4}
+              hospitalName="Mediplus Premier Hospital"
+              hospitalAddress="14 Galovita street Odonla Lagos State"
+            />
+          </div>
+        </div>
+      </section>
+      <section>
+        <div className="h-[55vh] w-[100%] flex justify-center items-center mt-[30px] flex-col">
+          <h1 className="text-2xl font-semibold text-primary underline mb-[7px]">
+            OUR SERVICES
+          </h1>
+          <h1 className="text-[16px] font-semibold text-tertiary ">
+            What We Offer
+          </h1>
+          <div className="h-[90%] w-[90%] mb-[10px] flex gap-8 mt-[20px]">
+            <Cards
+              icon={<IoNotificationsCircleSharp size={40} fill="#EBF1F8" />}
+              heading="Find Qualified Healthcare Professionals"
+              content=" Post job openings and connect with top-tier doctors, nurses, and
+           medical staff."
+              postJob="Post Job"
+            />
+            <Cards
+              icon={<FcProcess size={40} fill="#EBF1F8" />}
+              heading="Streamlined Hiring Process"
+              content="Simplify recruitment with our easy-to-use job posting and applicant tracking system."
+              postJob="Learn More"
+            />
+            <Cards
+              icon={<PiEqualizerFill size={40} fill="#EBF1F8" />}
+              heading="Equal Opportunities for All"
+              content="We promote fair hiring practices to ensure everyone gets a chance to excel."
+              postJob="Join Today"
+            />
+            <Cards
+              icon={<FaHandHoldingMedical size={40} fill="#EBF1F8" />}
+              heading="Grow Your Medical Career"
+              content="Get hired, gain experience, and advance in your field with top opportunities."
+              postJob="Explore Careers"
+            />
+          </div>
+        </div>
+      </section>
+      <section>
+        <div className="h-[70vh] w-[100%] mt-[40px] flex justify-center items-center flex-col">
+          <h1 className="text-2xl font-semibold text-primary underline mb-[10px]">
+            ABOUT US{" "}
+          </h1>
+          <div className="h-[90%] w-[88%] mt-[15px] flex justify-center items-center">
+            <div className="h-[100%] w-[50%]">
+              <img src={aboutImage} alt="" className="h-[100%] w-[100%] rounded-[10px]" />
+            </div>
+            <div className="h-[100%] w-[50%] flex justify-center items-center">
+              <div className="h-[90%] w-[90%] flex justify-center items-center">
+                <p className="text-[16px] text-tertiary">
+                  At{" "}
+                  <span className="text-[16px]  text-primary font-bold">
+                    MEDARK
+                  </span>
+                  , we bridge the gap between hospitals looking for qualified
+                  medical professionals and healthcare staff seeking the right
+                  opportunities. Our platform is designed to simplify the hiring
+                  process for healthcare facilities while ensuring professionals
+                  find jobs that match their skills and experience.
+                  <p className="text-[16px] text-tertiary mt-[15px]">
+                    <span className="text-[16px] text-primary font-bold">
+                      For Hospitals & Clinics :
+                    </span>{" "}
+                    Finding the right talent is crucial for providing quality
+                    healthcare. We help hospitals, clinics, and healthcare
+                    institutions post job openings, connect with top-tier
+                    medical staff, and streamline their hiring process with
+                    ease.
+                  </p>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div className="h-[50vh] w-[100%] bg-pink-700 mt-[20px]"></div>
+      </section>
     </div>
   );
 };
 
 export default LandingPage;
+
+// image={hospitalLogo1}
