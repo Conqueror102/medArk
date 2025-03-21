@@ -1,12 +1,12 @@
 import React from 'react'
 import Card from '../components/Card';
-import logo from "../assets/images.jpg"
+// import logo from "../assets/images.jpg"
 import PageHead from '../components/PageHead';
 import Search from '../components/Search';
 import hospital1 from "../assets/images.jpg";
-import hospital2 from "../assets/images1.png";
-import hospital3 from "../assets/imge.jpg";
-import hospital4 from "../assets/logos.png";
+// import hospital2 from "../assets/images1.png";
+// import hospital3 from "../assets/imge.jpg";
+// import hospital4 from "../assets/logos.png";
 import StaffCard from '../components/StaffCard';
 
 const Hospitals = () => {
