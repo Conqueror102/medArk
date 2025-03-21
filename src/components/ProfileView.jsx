@@ -4,7 +4,7 @@ const ProfileView = ({image, name, gmail}) => {
   return (
     <div className='flex gap-2'>
         <div className='w-13 h-13 rounded-full bg-amber-400 overflow-hidden'>
-            <img src={image} alt="" className='object-contain' />
+           {image}
         </div>
         <div>
             <h3 className='text-lg font-semibold'>{name}</h3>

@@ -1,11 +1,40 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import Logo from "../../assets/logo.png";
 import image from "../../assets/header-img (1).png";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { addUser } from "../../service/GlobalState";
+import { useRegisterUserMutation } from "../../service/UseRTK";
 
 const SignUp = () => {
+
+   // const [values, setValues] = useState({
+    //   email: "",
+    //   password: "",
+    // });
+    // const [isLoading, setIsLoading] = useState(false);
+    const navigate = useNavigate();
+    const dispatch = useDispatch()
+  
+    // const handleChange = (event) => {
+    //   const { name, value } = event.target;
+    //   setValues({ ...values, [name]: value });
+    // };
+  
+    const [registerUser,{data,isLoading,isSuccess,isError,error}] = useRegisterUserMutation();
+  
+    // const handleSubmit = async (e) => {
+    //   e.preventDefault();
+    //   loginUser(values)
+     
+    // };
+  
+
+ 
+
   const validationSchema = Yup.object({
     fullName: Yup.string()
       .min(3, "Full Name must be at least 3 characters")
@@ -24,10 +53,21 @@ const SignUp = () => {
     },
     validationSchema,
     onSubmit: (values) => {
-      console.log("Sign-Up Successful:", values);
-      alert("Sign-Up Successful");
+      registerUser(values)
     },
   });
+
+   useEffect(() => {
+  if (isSuccess) {
+    dispatch(addUser(data.data));
+    alert('User signUp successfully', data.message);
+    navigate("/auth");
+  }
+  if (isError) {
+    console.log(error);
+  }
+}, [isSuccess, isError, data, error, dispatch, navigate]);
+
   return (
     <>
       <div className="h-screen w-[100%] flex justify-center items-center bg-blue-200 max-[769px]:w-[100%]">
@@ -121,10 +161,11 @@ const SignUp = () => {
 
             <div className="flex flex-col items-center w-full mt-[20px]">
               <button
+               disabled={isLoading}
                 type="submit"
                 className="h-10 w-[90%] bg-blue-400 rounded-lg text-[12px] text-white hover:bg-primary transition"
               >
-                Sign Up
+                 {isLoading ? "Loading..." : "Submit"}
               </button>
               <p className="text-[12px] font-semibold mt-[10px]">
                 Already have an account?{" "}

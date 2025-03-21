@@ -1,13 +1,43 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import pogo from "../../assets/logo.png";
 import image from "../../assets/header-img (1).png";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
+// import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { addUser, setToken } from "../../service/GlobalState";
+import { useLoginUserMutation } from "../../service/UseRTK";
 // import { useNavigate } from "react-router-dom";
 
 
 const Login = () => {
+  // const [values, setValues] = useState({
+  //   email: "",
+  //   password: "",
+  // });
+  // const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
+  const dispatch = useDispatch()
+
+  // const handleChange = (event) => {
+  //   const { name, value } = event.target;
+  //   setValues({ ...values, [name]: value });
+  // };
+
+  const [loginUser,{data,isLoading,isSuccess,isError,error}] = useLoginUserMutation();
+  console.log(data?.message);
+
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   loginUser(values)
+   
+  // };
+
+  //  useEffect(() => {
+       
+      // }, [isSuccess, isError, data, dispatch, navigate, error]);
   // const navigate = useNavigate();
 
   const validationSchema = Yup.object({
@@ -21,10 +51,25 @@ const Login = () => {
     initialValues: { email: "", password: "" },
     validationSchema,
     onSubmit: (values) => {
-      console.log("Login Successful:", values);
-      alert("Login Successful");
+      loginUser(values)
     },
   });
+  useEffect(() => {
+    if (isSuccess) {
+      console.log("Response Data:", data); 
+      console.log(data.token);
+      dispatch(addUser(data.user));
+      dispatch(setToken(data.token)); 
+      alert("User signed up successfully");
+      navigate("/userdash");
+    }
+    if (isError) {
+      console.error("Signup Error:", error);
+      alert(error?.data?.message || "Signup failed. Please try again.");
+    }
+  }, [isSuccess, isError, data, error, dispatch, navigate]);
+  
+
   // const navigateBack = () => {
   //   navigate(-1);
   // };
@@ -87,7 +132,9 @@ const Login = () => {
                 Email
               </label>
               <input
+              // onChange={handleChange}
                 type="email"
+                // name="email"
                 id="email"
                 className="h-10 w-full p-3 rounded-lg bg-blue-100 text-[18px] font-semibold outline-primary"
                 {...formik.getFieldProps("email")}
@@ -102,6 +149,7 @@ const Login = () => {
                 Password
               </label>
               <input
+           
                 type="password"
                 id="password"
                 className="h-10 w-full p-3 rounded-lg bg-blue-100  outline-primary text-[18px] font-semibold"
@@ -116,10 +164,11 @@ const Login = () => {
             </div>
             <div className="flex flex-col gap-4 items-center w-full">
               <button
+              disabled={isLoading}
                 type="submit"
                 className="h-10 w-[90%] bg-blue-400 rounded-lg text-[20px] font-semibold text-white hover:bg-primary transition"
               >
-                Login
+                {isLoading ? "Loading..." : "Submit"}
               </button>
               <p className="text-[16px] font-semibold">
                 Dont have an account?{" "}

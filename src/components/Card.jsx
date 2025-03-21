@@ -32,7 +32,7 @@ const Card = ({logo, jobType, hosName, address, locum, time }) => {
       <p>
         {time}
       </p>
-      <Button text="View Job " className="bg-tertiary text-white mt-2 "/>
+      <Button text="Details " className="bg-tertiary text-white mt-2 "/>
       </div>
     </div>
   )

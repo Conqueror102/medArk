@@ -6,9 +6,9 @@ import Button from "./Button";
 const Search = () => {
   return (
     <>
-      <div className="h-[10%] w-[60%] bg-white rounded-[10px] flex justify-center items-center shadow-lg shadow-black-400/50 border-gray-100 border-2 mt-[20px]">
+      <div className="h-[10%] gap-3 p-2 bg-white rounded-[10px] flex justify-center items-center shadow-lg shadow-black-400/50 border-gray-100 border-2 mt-[20px]">
         <div className="h-[80%] w-[50%] flex justify-center items-center border-r">
-          <div className="h-[90%] w-[90%] flex items-center gap-[10px]">
+          <div className="h-[90%] w-[90%] flex items-center gap-[10px] text-gray-500">
             <CiSearch size={30} />
             <input
               type="text"
@@ -17,17 +17,17 @@ const Search = () => {
             />
           </div>
         </div>
-        <div className="h-[80%] w-[50%] flex justify-center items-center">
-          <div className="h-[90%] w-[90%] flex justify-around items-center">
+        <div className="  ">
+          <div className="h-[90%] flex justify-between items-center text-gray-400">
             <FaLocationDot />
             <input
               type="text"
               placeholder="City, state, Address"
-              className="text-gray-500 text-[18px] outline-0"
+              className="text-gray-500 text-[18px] outline-0 px-1"
             />
             <Button
               text="Find Jobs"
-              className="bg-primary w-[30%] h-[100%] text-white flex justify-center items-center"
+              className="bg-primary    w-35 h-[100%] text-white flex justify-center items-center"
             />
           </div>
         </div>

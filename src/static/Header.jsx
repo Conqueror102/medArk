@@ -17,7 +17,7 @@ const Header = () => {
 
 
   return (
-    <div className='w-full bg-white shadow-md px-20 max-sm:px-5 py-1 flex justify-between items-center sticky top-0 z-50'>
+    <div className='w-full shadow-md px-20 max-sm:px-5 bg-white py-1 flex justify-between items-center sticky top-0 z-50 max-[321px]:px-3'>
       <Link to="/">
       <div className='flex items-center'>
        <div className='flex items-center justify-center '>
@@ -61,7 +61,7 @@ const Header = () => {
     
         
           <div
-            className={`fixed top-12 left-0 w-3/4 h-full bg-white shadow-lg z-50 hidden max-md:flex flex-col ${isOpen === true ? "translate-x-[0px]" : "-translate-x-[550px]"} transition duration-500 ease-in-out`}
+            className={`fixed top-12 left-0 w-3/4 h-full bg-white shadow-lg z-50 hidden max-md:flex flex-col ${isOpen === true ? "translate-x-[0px]" : "-translate-x-[250px]"} transition duration-500 ease-in-out`}
             onClick={(e) => e.stopPropagation()}
           >
             <ul className="flex flex-col  font-semibold cursor-pointer text-tertiary  text-lg p-5">
