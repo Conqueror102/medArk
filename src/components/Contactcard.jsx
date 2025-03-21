@@ -7,7 +7,7 @@ const Contactcard = ({icon, con, title, content}) => {
            {icon}
         </div>
         <h2 className='font-semibold text-lg'>{title}</h2>
-        <p className='text-secondary mb-4'>{content}</p>
+        <p className='text-secondary mb-4 text-center'>{content}</p>
         <h3 className='text-primary font-semibold'>{con}</h3>
     </div>
   )

@@ -11,10 +11,10 @@ const Staffs = () => {
   return (
     <div>
       <PageHead content="Staffs"/>
-      <div className='px-20 pt-10 item-center flex justify-center'>
+      <div className='px-20 pt-10 max-sm:p-5 item-center flex justify-center'>
         <Search/>
       </div>
-      <div className="grid grid-cols-4 gap-8 max-sm:grid-cols-1 px-20 py-15">
+      <div className="grid grid-cols-4 gap-8 max-sm:grid-cols-1 px-20 py-15 max-sm:p-5">
           <StaffCard  image={hospital1} bio="my name is victor am a doctor with 5 yrs exprience" field="Doctor" name="victor Onyema"/>
           <StaffCard  image={hospital1} bio="my name is victor am a doctor with 5 yrs exprience" field="Doctor" name="victor Onyema"/>
           <StaffCard  image={hospital1} bio="my name is victor am a doctor with 5 yrs exprience" field="Doctor" name="victor Onyema"/>

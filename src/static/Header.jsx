@@ -13,7 +13,7 @@ const Header = () => {
     setIsOpen(!isOpen);
   };
 
-  const isActive = (path) => location.pathname === path ? "" : "";
+  const isActive = (path) => location.pathname === path ? "text-primary" : "";
 
 
   return (
@@ -30,13 +30,13 @@ const Header = () => {
      <div className='flex space-x-5 items-center '>
      <nav className='flex justify-center max-sm:hidden'>
         <ul className='flex space-x-8  font-semibold text-tertiary'>
-          <Link to="/"><li className=' hover:text-primary'>Home</li></Link>
-         <Link to="about"><li className=' hover:text-primary'>About Us</li></Link>
-         <Link to="jobs"><li className=' hover:text-primary'>Jobs</li></Link>
-          <Link to="hospitals"><li className=' hover:text-primary'>Hospitals</li></Link>
-         <Link to="staff"><li className=' hover:text-primary'>Staffs</li></Link>
-         <Link to="service"><li className=' hover:text-primary'>Service</li></Link>
-         <Link to="contact"><li className=' hover:text-primary'>Contact Us</li></Link>
+          <Link to="/"><li className={` hover:text-primary  ${isActive("/")} `}>Home</li></Link>
+         <Link to="about"><li className={`hover:text-primary  ${isActive("/about")} `}>About Us</li></Link>
+         <Link to="jobs"><li className={`hover:text-primary  ${isActive("/jobs")} `}>Jobs</li></Link>
+          <Link to="hospitals"><li className={`hover:text-primary  ${isActive("/hospitals")} `}>Hospitals</li></Link>
+         <Link to="staff"><li className={`hover:text-primary  ${isActive("/staff")} `}>Staffs</li></Link>
+         <Link to="service"><li className={`hover:text-primary  ${isActive("/service")} `}>Service</li></Link>
+         <Link to="contact"><li className={`hover:text-primary  ${isActive("/contact")} `}>Contact Us</li></Link>
         </ul>
       </nav>
 
@@ -61,17 +61,17 @@ const Header = () => {
     
         
           <div
-            className={`fixed top-12 left-0 w-3/4 h-full bg-white shadow-lg z-50 hidden max-md:flex flex-col ${isOpen === true ? "translate-x-[0px]" : "-translate-x-[250px]"} transition duration-500 ease-in-out`}
+            className={`fixed top-12 left-0 w-3/4 h-full bg-white shadow-lg z-50 hidden max-md:flex flex-col ${isOpen === true ? "translate-x-[0px]" : "-translate-x-[350px]"} transition duration-500 ease-in-out`}
             onClick={(e) => e.stopPropagation()}
           >
             <ul className="flex flex-col  font-semibold cursor-pointer text-tertiary  text-lg p-5">
               <Link to="/" exact className={`w-full p-3  ${isActive("/")}  `} onClick={toggleMenu}><li>Home</li></Link>
-              <Link to="about" className={`w-full p-3 ${isActive("about")}`} onClick={toggleMenu}><li>About</li></Link>
-              <Link to="contact" className={`w-full p-3 ${isActive("contact")}`} onClick={toggleMenu}><li>Contact Us</li></Link>
-              <Link to="service" className={`w-full p-3 ${isActive("service")}`} onClick={toggleMenu}><li>Services</li></Link>
-              <Link to="jobs" className={`w-full p-3 ${isActive("jobs")}`} onClick={toggleMenu}><li>Jobs</li></Link>
-              <Link to="hospitals" className={`w-full p-3 ${isActive("hospitals")}`} onClick={toggleMenu}><li>Hospitals</li></Link>
-              <Link to="staff" className={`w-full p-3 ${isActive("staff")}`} onClick={toggleMenu}><li>Staffs</li></Link>
+              <Link to="about" className={`w-full p-3 ${isActive("/about")}`} onClick={toggleMenu}><li>About</li></Link>
+              <Link to="contact" className={`w-full p-3 ${isActive("/contact")}`} onClick={toggleMenu}><li>Contact Us</li></Link>
+              <Link to="service" className={`w-full p-3 ${isActive("/service")}`} onClick={toggleMenu}><li>Services</li></Link>
+              <Link to="jobs" className={`w-full p-3 ${isActive("/jobs")}`} onClick={toggleMenu}><li>Jobs</li></Link>
+              <Link to="hospitals" className={`w-full p-3 ${isActive("/hospitals")}`} onClick={toggleMenu}><li>Hospitals</li></Link>
+              <Link to="staff" className={`w-full p-3 ${isActive("/staff")}`} onClick={toggleMenu}><li>Staffs</li></Link>
             </ul>
           </div>
 

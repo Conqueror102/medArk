@@ -64,7 +64,7 @@ const Jobs = () => {
   return (
     <>
         <PageHead content="Jobs"/>
-      <div className="px-20  bg-[#e1e1e1f] flex  w-full items-center  flex-col">
+      <div className="px-20  bg-[#e1e1e1f] max-sm:p-5 flex  w-full items-center  flex-col">
         <Search />
         <div className="grid grid-cols-3 py-15 max-sm:grid-cols-1 max-sm:gap-5 w-full gap-8 ">
               {card.map((e, index) => (

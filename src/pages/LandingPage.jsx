@@ -59,7 +59,7 @@ const LandingPage = () => {
       {/* text side */}
       <div className="px-4 md:px-24 flex flex-col md:flex-row py-10">
         <div className="w-full md:w-1/2  flex flex-col max-sm:items-center md:mt-10 max-sm:justify-center">
-          <h1 className="text-3xl md:text-5xl  max-sm:text-center font-bold text-tertiary mb-5 leading-15  md:leading-14 ">
+          <h1 className="text-3xl md:text-5xl  max-sm:text-center font-bold text-tertiary mb-5 leading-10  md:leading-14 ">
           Bridging the gap between{" "}
             <span className="px-1 max-sm:text-2xl  rounded-md bg-accent">
               Hospitals 

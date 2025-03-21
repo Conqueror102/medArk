@@ -31,7 +31,7 @@ const ContactUs = () => {
 
       <div className="w-[100%] bg-[#edf5fd] pt-15 flex justify-center items-center flex-col">
        
-        <div className="h-[80vh] mt-[25px] w-[86%] flex justify-center items-center mb-6">
+        <div className=" mt-[25px] w-[86%] flex justify-center max-sm:flex-col items-center mb-6">
           <div className="h-[100%] w-[60%] flex justify-start items-center">
             <img src={contactUsImage} alt="" className="h-[90%] w-[90%]" />
           </div>

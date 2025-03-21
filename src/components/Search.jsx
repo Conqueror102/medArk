@@ -5,35 +5,24 @@ import Button from "./Button";
 
 const Search = () => {
   return (
-    <>
-      <div className="h-[10%] gap-3 p-2 bg-white rounded-[10px] flex justify-center items-center shadow-lg shadow-black-400/50 border-gray-100 border-2 mt-[20px]">
-        <div className="h-[80%] w-[50%] flex justify-center items-center border-r">
-          <div className="h-[90%] w-[90%] flex items-center gap-[10px] text-gray-500">
-            <CiSearch size={30} />
+    <div className="gap-3 p-2 w-2xl max-sm:w-70 max-sm:h-13  bg-white rounded-full flex   justify-center items-center shadow-lg shadow-black-400/50 border-gray-100 border-2 mt-[20px]">
+      <div className="w-full flex flex-col md:flex-row">
+        <div className=" w-full flex justify-center items-center ">
+          <div className=" w-full flex items-center gap-[10px] text-gray-500">
+           
             <input
               type="text"
-              placeholder="Job title, Keywords, or company"
-              className="text-gray-500 text-[18px] outline-0 w-[80%]"
+              placeholder="Job title, Keywords, company, Name"
+              className="text-gray-500 text-[18px] outline-0 p-2 max-sm:p-2 rounded-full w-full"
             />
           </div>
         </div>
-        <div className="  ">
-          <div className="h-[90%] flex justify-between items-center text-gray-400">
-            <FaLocationDot />
-            <input
-              type="text"
-              placeholder="City, state, Address"
-              className="text-gray-500 text-[18px] outline-0 px-1"
-            />
-            <Button
-              text="Find Jobs"
-              className="bg-primary    w-35 h-[100%] text-white flex justify-center items-center"
-            />
-          </div>
-        </div>
+        
       </div>
-      {/* <h1 className='text-[16px] text-tertiary font-semibold'>Post Your CV To Be Able To Apply</h1> */}
-    </>
+     <div className="bg-primary p-3  text-xl max-sm:p-2 cursor-pointer rounded-full text-white  ">
+     <CiSearch  strokeWidth={2}/>
+     </div>
+    </div>
   );
 };
 

@@ -61,7 +61,7 @@ const Service = () => {
         </div>
       </section>
 
-     <div className="px-20 gap-4 pb-10  grid grid-cols-4 ">
+     <div className="px-20 gap-4 pb-10 max-sm:p-5 grid grid-cols-4 max-sm:grid-cols-1">
      <Cards
           icon={<BsFillSearchHeartFill size={40} />}
           heading="Find Your Dream Healthcare Job"
