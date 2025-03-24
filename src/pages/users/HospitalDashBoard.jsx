@@ -8,7 +8,8 @@ import { MdBookmarkAdded } from "react-icons/md";
 import { FaHandLizard } from "react-icons/fa";
 import Card from '../../components/Card';
 import logo from "../../assets/logo.png"
-const HospitalDashboard = () => {
+
+const HospitalDashBoard = () => {
      const card = [
             {
                 logo: logo,
@@ -36,15 +37,15 @@ const HospitalDashboard = () => {
                   time:"20/10/2015"
             },
         ]
+    
   return (
-    <div>
-         <div className='p-8 bg-gray-50'>
+    <div className='p-8 bg-gray-50'>
     <div className='grid grid-cols-4 gap-4'>
         <Statistic icon={<IoBriefcase />} text="Total Jobs" count="400" className="border-b-2 border-blue-500" iconBg="bg-blue-200  text-blue-800 " />
         {/* <Statistic icon={<FaHospital />} text="Hospitals" count="400" className="border-b-2 border-green-500" iconBg="bg-green-200  text-green-800 " /> */}
         <Statistic icon={<BsClipboard2CheckFill />} text="Jobs Posted" count="400" className="border-b-2 border-yellow-500" iconBg="bg-yellow-200  text-yellow-800 " />
         {/* <Statistic icon={<IoNotificationsSharp />} text="Notification" count="400" className="border-b-2 border-pink-500" iconBg="bg-pink-200  text-pink-800 " /> */}
-        <Statistic icon={<MdBookmarkAdded />} text="Total Staffs" count="400" className="border-b-2 border-purple-500" iconBg="bg-purple-200  text-purple-800 " />
+        <Statistic icon={<MdBookmarkAdded />} text="Saved Jobs" count="400" className="border-b-2 border-purple-500" iconBg="bg-purple-200  text-purple-800 " />
         <Statistic icon={<FaHandLizard />} text="Jobs for you" count="400" className="border-b-2 border-red-500" iconBg="bg-red-200  text-red-800 " />
 
     </div>
@@ -58,8 +59,7 @@ const HospitalDashboard = () => {
 
         <p className='text-primary text-lg font-semibold mt-4 cursor-pointer'>View More</p>
 </div>
-    </div>
   )
 }
 
-export default HospitalDashboard
+export default HospitalDashBoard

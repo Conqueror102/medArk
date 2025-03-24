@@ -42,7 +42,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const userSlice = createApi({
   reducerPath: "userApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: "http://localhost:2909/api",
+    baseUrl: "https://medark.onrender.com/api",
     prepareHeaders: (headers, { getState }) => {
       const token = getState().user?.token;
       if (token) {
