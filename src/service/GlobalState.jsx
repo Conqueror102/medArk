@@ -26,7 +26,7 @@ const GlobalState = createSlice({
     setToken: (state, action) => {
         state.token = action.payload;
         console.log("Token to store:", action.payload);
-        localStorage.setItem("token", action.payload);
+        // localStorage.setItem("token", action.payload);
     },
     logout: (state) => {
       state.user = null;

@@ -25,6 +25,7 @@ import { FaClipboardList, FaProjectDiagram, FaUserMd, FaUserTie } from "react-ic
 import { IoCallOutline, IoMailOpenOutline } from "react-icons/io5";
 import { MdOutlineLocationOn, MdSpeed } from "react-icons/md";
 import ServiceCard from "../components/ServiceCard";
+import { Link } from "react-router-dom";
 
 const LandingPage = () => {
   const card = [
@@ -59,13 +60,13 @@ const LandingPage = () => {
       {/* text side */}
       <div className="px-4 md:px-24 flex flex-col md:flex-row py-10">
         <div className="w-full md:w-1/2  flex flex-col max-sm:items-center md:mt-10 max-sm:justify-center">
-          <h1 className="text-3xl md:text-5xl  max-sm:text-center font-bold text-tertiary mb-5 leading-10  md:leading-14 ">
+          <h1 className="text-3xl md:text-5xl  max-sm:text-center font-bold text-tertiary mb-5 leading-10  md:leading-15 ">
           Bridging the gap between{" "}
             <span className="px-1 max-sm:text-2xl  rounded-md bg-accent">
               Hospitals 
             </span>{" "}
            and top-tier medical {" "}
-            <span className="text-primary">professionals.</span>
+            <span className="text-primary">professionals.</span>{" "}
           </h1>
           <p className="text-md max-sm:text-center text-secondary">
             Find the right healthcare professionals for your hospital or
@@ -73,8 +74,10 @@ const LandingPage = () => {
             platform.
           </p>
           <div className="flex gap-3 mt-7 max-sm:pb-4">
-            <Button text="Find Jobs" className="bg-primary text-white" />
-            <Button text="Post Jobs" className="bg-accent text-primary" />
+            {/* <Button text="Find Jobs" className="bg-primary text-white" /> */}
+           <Link to="about">
+           <Button text="Learn More" className="bg-accent text-primary" />
+           </Link>
           </div>
         </div>
         <div className="w-full md:w-1/2 h-full flex justify-end items-center">
@@ -184,7 +187,7 @@ const LandingPage = () => {
         </div>
       </section>
 
-      <section className="bg-accent px-20 py-15 max-sm:p-5 flex flex-col">
+      {/* <section className="bg-accent px-20 py-15 max-sm:p-5 flex flex-col">
         <p className="font-semibold text-primary text-lg text-center mt-5">
           Top Professionals
         </p>
@@ -198,7 +201,7 @@ const LandingPage = () => {
           <StaffCard  image={hospital1} bio="my name is victor am a doctor with 5 yrs exprience" field="Doctor" name="victor Onyema"/>
         </div>
         <Button text="View Staff" className="bg-primary mt-10 text-white m-auto " />
-      </section>
+      </section> */}
 
       <section className="px-20 py-15 max-sm:p-5 grid place-items-center">
       <p className="font-semibold text-primary text-lg text-center mt-5">

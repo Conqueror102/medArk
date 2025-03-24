@@ -33,8 +33,8 @@ const Header = () => {
           <Link to="/"><li className={` hover:text-primary  ${isActive("/")} `}>Home</li></Link>
          <Link to="about"><li className={`hover:text-primary  ${isActive("/about")} `}>About Us</li></Link>
          <Link to="jobs"><li className={`hover:text-primary  ${isActive("/jobs")} `}>Jobs</li></Link>
-          <Link to="hospitals"><li className={`hover:text-primary  ${isActive("/hospitals")} `}>Hospitals</li></Link>
-         <Link to="staff"><li className={`hover:text-primary  ${isActive("/staff")} `}>Staffs</li></Link>
+          {/* <Link to="hospitals"><li className={`hover:text-primary  ${isActive("/hospitals")} `}>Hospitals</li></Link> */}
+         {/* <Link to="staff"><li className={`hover:text-primary  ${isActive("/staff")} `}>Staffs</li></Link> */}
          <Link to="service"><li className={`hover:text-primary  ${isActive("/service")} `}>Service</li></Link>
          <Link to="contact"><li className={`hover:text-primary  ${isActive("/contact")} `}>Contact Us</li></Link>
         </ul>
@@ -70,8 +70,8 @@ const Header = () => {
               <Link to="contact" className={`w-full p-3 ${isActive("/contact")}`} onClick={toggleMenu}><li>Contact Us</li></Link>
               <Link to="service" className={`w-full p-3 ${isActive("/service")}`} onClick={toggleMenu}><li>Services</li></Link>
               <Link to="jobs" className={`w-full p-3 ${isActive("/jobs")}`} onClick={toggleMenu}><li>Jobs</li></Link>
-              <Link to="hospitals" className={`w-full p-3 ${isActive("/hospitals")}`} onClick={toggleMenu}><li>Hospitals</li></Link>
-              <Link to="staff" className={`w-full p-3 ${isActive("/staff")}`} onClick={toggleMenu}><li>Staffs</li></Link>
+              {/* <Link to="hospitals" className={`w-full p-3 ${isActive("/hospitals")}`} onClick={toggleMenu}><li>Hospitals</li></Link> */}
+              {/* <Link to="staff" className={`w-full p-3 ${isActive("/staff")}`} onClick={toggleMenu}><li>Staffs</li></Link> */}
             </ul>
           </div>
 

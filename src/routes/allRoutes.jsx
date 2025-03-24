@@ -19,6 +19,10 @@ import SavedJobs from '../pages/users/SavedJobs'
 import Notification from '../pages/users/Notification'
 import HospitalSignUp from '../pages/auth/HospitalSignUp'
 import ContactUs from '../pages/ContactUs'
+import PrivateRoute from '../layout/PrivateRoute'
+import JobDetails from '../pages/Detail'
+import HospitalDashboard from '../pages/hopitals/HospitalDashboard'
+import HospitalDashboardLayout from '../layout/HospitalDashboardLayout'
 
 const AllRoutes = () => {
   return (
@@ -42,15 +46,22 @@ const AllRoutes = () => {
             <Route path='hospitalSignUp' element={<HospitalSignUp/>}/>
 
             {/* user dashboard */}
-
+<Route element={<PrivateRoute/>}>
             <Route path='/userdash' element={<UserDashLayout/>}>
                 <Route index element={<UserDashboard/>}/>
+            <Route path='jobs/:jobId' element={<JobDetails/>}/>
                 <Route path='profile' element={<Profile/>}/>
                 <Route path='findjob' element={<Findjobs/>}/>
                 <Route path='applied' element={<Applied/>}/>
                 <Route path='notification' element={<Notification/>}/>
                 <Route path='savedjob' element={<SavedJobs/>}/>
             </Route>
+</Route>
+
+        {/* hospital dashboard */}
+        <Route path='/hospitaldash' element={<HospitalDashboardLayout/>}>
+        <Route index element={<HospitalDashboard/>}/>
+        </Route>
         </Routes>
         </BrowserRouter>
     </div>

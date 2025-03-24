@@ -8,9 +8,10 @@ import { FaRegBookmark } from "react-icons/fa6";
 import { BiLogOut } from "react-icons/bi";
 import logo from "../assets/logo.png"
 import { Link } from 'react-router-dom';
-const UserSideBer = () => {
+const HospitalSideBar = () => {
   return (
-    <div className='shadow-md sticky  top-0 h-screen w-[250px]'>
+    <div>
+ <div className='shadow-md sticky  top-0 h-screen w-[250px]'>
           <div className='flex items-center px-9'>
                <div className='flex items-center justify-center '>
                   <img src={logo} alt=""  className='size-17 max-sm:size-10 object-contain'/>
@@ -28,7 +29,8 @@ const UserSideBer = () => {
             <h1 className='px-9 py-3 hover:bg-hero  hover:border-l-3 border-primary flex items-center gap-2'> <span className='text-lg'><BiLogOut /></span>Log Out</h1>
         </div>
     </div>
+    </div>
   )
 }
 
-export default UserSideBer
+export default HospitalSideBar

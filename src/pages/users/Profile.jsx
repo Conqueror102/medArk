@@ -1,121 +1,159 @@
-import { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
+import { useGetProfileQuery, useCreateOrUpdateProfileMutation } from "../../service/UseRTK";
+import { Camera } from "lucide-react";
 
-export default function ProfessionalProfileForm() {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
+const Profile = () => {
+    const { data: profile, isLoading } = useGetProfileQuery();
+    const [createOrUpdateProfile, { isLoading: isUpdating }] = useCreateOrUpdateProfileMutation();
+    const [isEditing, setIsEditing] = useState(false);
+    const [profileSubmitted, setProfileSubmitted] = useState(false);
+    const [profilePicture, setProfilePicture] = useState(null);
+    const [resume, setResume] = useState(null);
+    const [previewProfilePicture, setPreviewProfilePicture] = useState("/default-avatar.png");
+    const originalProfile = useRef(null); // Store original profile data
 
-  const [preview, setPreview] = useState(null);
-  const [formData, setFormData] = useState(null);
+    const { register, handleSubmit, reset } = useForm({
+        resolver: yupResolver(yup.object({
+            profession: yup.string().required("Profession is required"),
+            bio: yup.string().required("Bio is required"),
+            experience: yup.number().positive().integer().required("Experience is required"),
+            phone: yup.string().required("Phone number is required"),
+            location: yup.string().required("Location is required"),
+        })),
+    });
 
-  const onSubmit = (data) => {
-    setFormData(data); // Save submitted data for editing
-  };
+    useEffect(() => {
+        if (profile) {
+            reset(profile);
+            setPreviewProfilePicture(profile.profilePicture || "/default-avatar.png");
+            setProfileSubmitted(true);
+            originalProfile.current = profile; // Store original data
+        }
+    }, [profile, reset]);
 
-  const handleImageChange = (e) => {
-    const file = e.target.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        setPreview(reader.result);
-      };
-      reader.readAsDataURL(file);
-    }
-  };
+    const handleProfilePictureChange = (event) => {
+        const file = event.target.files[0];
+        if (file) {
+            setProfilePicture(file);
+            setPreviewProfilePicture(URL.createObjectURL(file));
+        }
+    };
 
-  return (
-    <div className="max-w-lg mx-auto p-8 bg-white shadow-lg rounded-2xl border border-gray-200">
-      <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">Medical Professional Profile</h2>
-      <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
-        <div className="text-center">
-          {preview ? (
-            <img src={preview} alt="Profile Preview" className="w-24 h-24 mx-auto rounded-full object-cover" />
-          ) : (
-            <div className="w-24 h-24 mx-auto bg-gray-200 rounded-full flex items-center justify-center text-gray-500">
-              No Image
+    const handleResumeChange = (event) => {
+        const file = event.target.files[0];
+        if (file) {
+            setResume(file);
+        }
+    };
+
+    const onSubmit = async (data) => {
+        const formData = new FormData();
+        Object.keys(data).forEach((key) => formData.append(key, data[key]));
+        if (profilePicture) formData.append("profilePicture", profilePicture);
+        if (resume) formData.append("resume", resume);
+
+        try {
+            await createOrUpdateProfile(formData).unwrap();
+            setProfileSubmitted(true);
+            setIsEditing(false);
+        } catch (error) {
+            console.error("Error updating profile:", error);
+        }
+    };
+
+    const handleCancel = () => {
+        if (originalProfile.current) {
+            reset(originalProfile.current); // Restore original data
+            setProfilePicture(null);
+            setResume(null);
+            setPreviewProfilePicture(originalProfile.current.profilePicture || "/default-avatar.png");
+            setIsEditing(false);
+        }
+    };
+
+    return (
+        <div className="max-w-5xl mx-auto p-6 bg-white shadow-xl rounded-xl flex gap-8">
+            <div className="w-1/3 flex flex-col items-center bg-gray-100 p-6 rounded-lg">
+                <label className="relative cursor-pointer">
+                    <img
+                        src={previewProfilePicture}
+                        alt="Profile"
+                        className="w-36 h-36 rounded-full object-cover border-2 border-gray-300 shadow-md"
+                    />
+                    {isEditing && (
+                        <div className="absolute bottom-0 right-0 bg-black/50 p-2 rounded-full">
+                            <Camera className="text-white w-5 h-5" />
+                        </div>
+                    )}
+                    <input
+                        type="file"
+                        accept="image/*"
+                        className="hidden"
+                        onChange={handleProfilePictureChange}
+                        disabled={!isEditing}
+                    />
+                </label>
             </div>
-          )}
-          <input type="file" accept="image/*" className="mt-3" onChange={handleImageChange} />
-        </div>
 
-        <div>
-          <label className="block text-sm font-semibold text-gray-600">Full Name</label>
-          <input
-            {...register("fullName", { required: "Full Name is required" })}
-            defaultValue={formData?.fullName || ""}
-            className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none"
-          />
-          {errors.fullName && <p className="text-red-500 text-sm mt-1">{errors.fullName.message}</p>}
-        </div>
+            <div className="w-2/3">
+                <h2 className="text-2xl font-semibold mb-6">Profile Information</h2>
+                {isLoading ? (
+                    <p className="text-center">Loading profile...</p>
+                ) : (
+                    <form onSubmit={handleSubmit(onSubmit)} className="grid grid-cols-2 gap-4">
+                        <input {...register("profession")} disabled={!isEditing} className="w-full p-2 border rounded" placeholder="Profession" />
+                        <input {...register("experience")} type="number" disabled={!isEditing} className="w-full p-2 border rounded" placeholder="Experience" />
+                        <input {...register("phone")} disabled={!isEditing} className="w-full p-2 border rounded" placeholder="Phone" />
+                        <input {...register("location")} disabled={!isEditing} className="w-full p-2 border rounded" placeholder="Location" />
+                        <textarea {...register("bio")} disabled={!isEditing} className="w-full col-span-2 p-2 border rounded" placeholder="Bio" />
 
-        <div>
-          <label className="block text-sm font-semibold text-gray-600">Bio</label>
-          <textarea
-            {...register("bio", { required: "Bio is required" })}
-            defaultValue={formData?.bio || ""}
-            className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none h-24"
-          />
-          {errors.bio && <p className="text-red-500 text-sm mt-1">{errors.bio.message}</p>}
-        </div>
+                        {isEditing && (
+                            <div className="col-span-2">
+                                <label className="block text-gray-700">Upload Resume:</label>
+                                <input type="file" accept=".pdf,.doc,.docx" className="w-full p-2 border rounded" onChange={handleResumeChange} />
+                            </div>
+                        )}
 
-        <div>
-          <label className="block text-sm font-semibold text-gray-600">Specialty</label>
-          <input
-            {...register("specialty", { required: "Specialty is required" })}
-            defaultValue={formData?.specialty || ""}
-            className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none"
-          />
-          {errors.specialty && <p className="text-red-500 text-sm mt-1">{errors.specialty.message}</p>}
+                        <div className="col-span-2 flex justify-end gap-4 mt-4">
+                            {profileSubmitted && (
+                                <div className="flex gap-4">
+                                    <button
+                                        type="submit"
+                                        className={`bg-blue-500 text-white px-4 py-2 rounded transition-colors duration-300 ${!isEditing && "hidden"}`}
+                                        disabled={isUpdating}
+                                    >
+                                        {isUpdating ? "Saving..." : "Save"}
+                                    </button>
+                                    <button
+                                        type="button"
+                                        className={`bg-gray-500 text-white px-4 py-2 rounded transition-colors duration-300 ${!isEditing && "hidden"}`}
+                                        onClick={handleCancel}
+                                    >
+                                        Cancel
+                                    </button>
+                                    <button
+                                        type="button"
+                                        className={`bg-green-500 text-white px-4 py-2 rounded transition-colors duration-300 ${isEditing && "hidden"}`}
+                                        onClick={() => setIsEditing(true)}
+                                    >
+                                        Edit Profile
+                                    </button>
+                                </div>
+                            )}
+                            {!profileSubmitted && (
+                                <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded transition-colors duration-300">
+                                    Submit
+                                </button>
+                            )}
+                        </div>
+                    </form>
+                )}
+            </div>
         </div>
+    );
+};
 
-        <div>
-          <label className="block text-sm font-semibold text-gray-600">Years of Experience</label>
-          <input
-            type="number"
-            {...register("experience", { required: "Experience is required", min: 0 })}
-            defaultValue={formData?.experience || ""}
-            className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none"
-          />
-          {errors.experience && <p className="text-red-500 text-sm mt-1">{errors.experience.message}</p>}
-        </div>
-
-        <div>
-          <label className="block text-sm font-semibold text-gray-600">Certifications</label>
-          <input
-            {...register("certifications")}
-            defaultValue={formData?.certifications || ""}
-            className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none"
-          />
-        </div>
-
-        <div>
-          <label className="block text-sm font-semibold text-gray-600">Availability</label>
-          <select {...register("availability", { required: "Availability is required" })} defaultValue={formData?.availability || ""} className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none">
-            <option value="">Select Availability</option>
-            <option value="full-time">Full-Time</option>
-            <option value="part-time">Part-Time</option>
-            <option value="contract">Contract</option>
-          </select>
-          {errors.availability && <p className="text-red-500 text-sm mt-1">{errors.availability.message}</p>}
-        </div>
-
-        <div>
-          <label className="block text-sm font-semibold text-gray-600">Location</label>
-          <input
-            {...register("location", { required: "Location is required" })}
-            defaultValue={formData?.location || ""}
-            className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none"
-          />
-          {errors.location && <p className="text-red-500 text-sm mt-1">{errors.location.message}</p>}
-        </div>
-
-        <button type="submit" className="w-full bg-blue-500 text-white p-3 rounded-lg hover:bg-blue-600 transition font-semibold">
-          Submit
-        </button>
-      </form>
-    </div>
-  );
-}
+export default Profile;

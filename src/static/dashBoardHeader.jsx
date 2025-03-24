@@ -8,12 +8,12 @@ const DashBoardHeader = () => {
            <h1 className='text-2xl font-semibold'>Welcome Victor</h1>  
        </div>
      <div className='flex items-center gap-3.5'>
-            <IoNotificationsSharp  size={20}/>
+            {/* <IoNotificationsSharp  size={20}/> */}
 
             <div className=' w-11 h-11 rounded-full bg-amber-300 '>
                 <img src="" alt="" />
             </div>
-     </div>
+     </div> 
     </div>
   )
 }

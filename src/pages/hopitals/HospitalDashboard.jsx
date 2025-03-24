@@ -8,39 +8,37 @@ import { MdBookmarkAdded } from "react-icons/md";
 import { FaHandLizard } from "react-icons/fa";
 import Card from '../../components/Card';
 import logo from "../../assets/logo.png"
-
-const UserDashboard = () => {
-
-    const card = [
-        {
-            logo: logo,
-            jobType:"Assistant doctor",
-             hosName:"Adoba hospital",
-              address:"Lagos",
-              locum:"FullTime",
-              time:"20/10/2015"
-        },
-        {
-            logo: logo,
-            jobType:"Mid Wife",
-             hosName:"Medark hospital",
-              address:"Lagos",
-              locum:"PerTime",
-              time:"20/10/2015"
-        },
-
-        {
-            logo: logo,
-            jobType:"Dentist",
-             hosName:"Total hospital",
-              address:"Lagos",
-              locum:"FullTime",
-              time:"20/10/2015"
-        },
-    ]
-
-   return (
-    <div className='p-8 bg-gray-50'>
+const HospitalDashboard = () => {
+     const card = [
+            {
+                logo: logo,
+                jobType:"Assistant doctor",
+                 hosName:"Adoba hospital",
+                  address:"Lagos",
+                  locum:"FullTime",
+                  time:"20/10/2015"
+            },
+            {
+                logo: logo,
+                jobType:"Mid Wife",
+                 hosName:"Medark hospital",
+                  address:"Lagos",
+                  locum:"PerTime",
+                  time:"20/10/2015"
+            },
+    
+            {
+                logo: logo,
+                jobType:"Dentist",
+                 hosName:"Total hospital",
+                  address:"Lagos",
+                  locum:"FullTime",
+                  time:"20/10/2015"
+            },
+        ]
+  return (
+    <div>
+         <div className='p-8 bg-gray-50'>
     <div className='grid grid-cols-4 gap-4'>
         <Statistic icon={<IoBriefcase />} text="Total Jobs" count="400" className="border-b-2 border-blue-500" iconBg="bg-blue-200  text-blue-800 " />
         {/* <Statistic icon={<FaHospital />} text="Hospitals" count="400" className="border-b-2 border-green-500" iconBg="bg-green-200  text-green-800 " /> */}
@@ -60,7 +58,8 @@ const UserDashboard = () => {
 
         <p className='text-primary text-lg font-semibold mt-4 cursor-pointer'>View More</p>
 </div>
-   )
+    </div>
+  )
 }
 
-export default UserDashboard
+export default HospitalDashboard
