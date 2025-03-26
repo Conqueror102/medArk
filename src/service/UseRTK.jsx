@@ -38,9 +38,9 @@
 // //   useGetSingleUserQuery,
 // } = userSlice;
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { use } from "react";
+// import { use } from "react";
 
-const baseUrl = meta.env.VITE.BASE_URL
+const baseUrl = import.meta.env.VITE_BASE_URL
 
 export const userSlice = createApi({
   reducerPath: "userApi",
@@ -122,4 +122,5 @@ export const {
  useGetJobByIdQuery,
  useGetUserJobQuery,
  useApplyMutation,
+ useCreateJobMutation
 } = userSlice;

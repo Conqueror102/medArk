@@ -7,11 +7,7 @@ import PageHead from '../components/PageHead'
 import { IoIosCall } from "react-icons/io";
 import { MdOutlineMail } from "react-icons/md";
 import { IoLocationSharp } from "react-icons/io5";
-<<<<<<< HEAD
 import contactUsImage from "../assets/contact.svg";
-=======
-import contactUsImage from "../assets/contactUsPageImage.jpg";
->>>>>>> 58c3978 (Updated job features)
 import Button from "../components/Button";
 
 const ContactUs = () => {
@@ -72,8 +68,6 @@ const ContactUs = () => {
               </div>
             </form>
           </div>
-<<<<<<< HEAD
-=======
         </div>
         <div className="h-[80vh] mt-[25px] w-[86%] flex justify-center items-center mb-6">
           <div className="h-[100%] w-[60%] flex justify-start items-center">
@@ -111,7 +105,6 @@ const ContactUs = () => {
               </div>
             </form>
           </div>
->>>>>>> 58c3978 (Updated job features)
         </div>
       </div>
     
