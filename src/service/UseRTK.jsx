@@ -38,11 +38,14 @@
 // //   useGetSingleUserQuery,
 // } = userSlice;
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import { use } from "react";
+
+const baseUrl = meta.env.VITE.BASE_URL
 
 export const userSlice = createApi({
   reducerPath: "userApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: "https://medark.onrender.com/api",
+    baseUrl: baseUrl,
     prepareHeaders: (headers, { getState }) => {
       const token = getState().user?.token;
       if (token) {
@@ -86,7 +89,27 @@ export const userSlice = createApi({
     getJobById: builder.query({
       query: (jobId) => `/JobCreate/oneJob/${jobId}`,  // This fetches ONE job
     }),
-    
+
+    getUserJob: builder.query({
+      query: () => `jobApplication/my-applications`,  // This fetches ONE job
+      providesTags: ["Applications"],
+    }),
+
+    apply: builder.mutation({
+      query: (jobId) => ({
+        url: "jobApplication/apply",
+        method: "POST",
+        body: { jobId },
+      }),
+    }),
+
+    createJob: builder.mutation({
+      query: (jobData) => ({
+        url: "jobCreate/create",
+        method: "POST",
+        body: jobData,
+      }),
+    }),
   }),
 });
 
@@ -96,5 +119,7 @@ export const {
   useGetAllJobsQuery,
   useGetProfileQuery, // Fetch profile (create/update happens in same endpoint)
   useCreateOrUpdateProfileMutation, // Handles both create and update
- useGetJobByIdQuery
+ useGetJobByIdQuery,
+ useGetUserJobQuery,
+ useApplyMutation,
 } = userSlice;

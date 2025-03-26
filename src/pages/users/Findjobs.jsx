@@ -13,7 +13,7 @@ const Findjobs = () => {
      </div>
       <div className='px-20 py-15 grid grid-cols-3'>
       {jobs.map((props, index) => (
-                      <Card key={index} logo={props.logo} jobType={props.jobType} name={props.hospital.name} location={props.location} title={props.title} createdAt={new Date(props.createdAt).toLocaleString()}/>
+                      <Card key={index} logo={props.logo} jobType={props.jobType} name={props.hospital.name} location={props.location} title={props.title} createdAt={new Date(props.createdAt).toLocaleString()} url={props._id}/>
                     ))}
       </div>
     </div>

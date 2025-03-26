@@ -28,6 +28,8 @@ import HospitalProfile from "../pages/hopitals/HospitalProfile";
 import ApplicationsPage from "../pages/hopitals/ApplicationsPage";
 import GetStaffs from "../pages/hopitals/getStaffs";
 
+import CheckEmail from '../components/CheckEmail'
+
 const AllRoutes = () => {
   return (
     <div>
@@ -71,6 +73,29 @@ const AllRoutes = () => {
             <Route path="getStaffs" element={<GetStaffs />} />
             {/* <Route path="savedjob" element={<SavedJobs />} /> */}
           </Route>
+            {/* auth */}
+            <Route path='signup' element={<SignUp/>}/>
+            <Route path='auth' element={<Login/>}/>
+            <Route path='hospitalSignUp' element={<HospitalSignUp/>}/>
+
+            {/* user dashboard */}
+<Route element={<PrivateRoute/>}>
+            <Route path='/userdash' element={<UserDashLayout/>}>
+                <Route index element={<UserDashboard/>}/>
+            <Route path='jobs/:jobId' element={<JobDetails/>}/>
+                <Route path='profile' element={<Profile/>}/>
+                <Route path='findjob' element={<Findjobs/>}/>
+                <Route path='applied' element={<Applied/>}/>
+                <Route path='notification' element={<Notification/>}/>
+                <Route path='savedjob' element={<SavedJobs/>}/>
+            </Route>
+</Route>
+
+        {/* hospital dashboard */}
+        <Route path='/hospitaldash' element={<HospitalDashboardLayout/>}>
+        <Route index element={<HospitalDashboard/>}/>
+        </Route>
+        <Route path='/checkemail' element={<CheckEmail/>}/>
         </Routes>
       </BrowserRouter>
     </div>

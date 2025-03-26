@@ -1,3 +1,8 @@
+import storage from "redux-persist/lib/storage";
+import GlobalState from "../service/GlobalState";
+import { configureStore } from "@reduxjs/toolkit";
+import { userSlice } from "./UseRTK";
+
 import {
     persistReducer,
     FLUSH,
@@ -7,11 +12,7 @@ import {
     PURGE,
     REGISTER,
   } from "redux-persist";
-  import storage from "redux-persist/lib/storage";
-  
-  import GlobalState from "../service/GlobalState";
-  import { configureStore } from "@reduxjs/toolkit";
-import { userSlice } from "./UseRTK";
+ 
 
   
   const persistConfig = {

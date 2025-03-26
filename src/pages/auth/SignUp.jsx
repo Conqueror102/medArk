@@ -61,7 +61,7 @@ const SignUp = () => {
   if (isSuccess) {
     dispatch(addUser(data.data));
     alert('User signUp successfully', data.message);
-    navigate("/auth");
+    navigate("/checkemail ");
   }
   if (isError) {
     console.log(error);
