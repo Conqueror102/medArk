@@ -23,6 +23,7 @@ import PrivateRoute from '../layout/PrivateRoute'
 import JobDetails from '../pages/Detail'
 import HospitalDashboard from '../pages/hopitals/HospitalDashboard'
 import HospitalDashboardLayout from '../layout/HospitalDashboardLayout'
+import CheckEmail from '../components/CheckEmail'
 
 const AllRoutes = () => {
   return (
@@ -62,6 +63,7 @@ const AllRoutes = () => {
         <Route path='/hospitaldash' element={<HospitalDashboardLayout/>}>
         <Route index element={<HospitalDashboard/>}/>
         </Route>
+        <Route path='/checkemail' element={<CheckEmail/>}/>
         </Routes>
         </BrowserRouter>
     </div>
