@@ -22,7 +22,7 @@ const HospitalSideBar = () => {
         <div className=''>
            <Link to="/userdash"> <h1 className='px-9 py-3 hover:bg-hero  hover:border-l-3 border-primary flex items-center gap-2'> <span className='text-lg'><MdOutlineSpaceDashboard /></span>Dashboard</h1></Link>
            <Link to="profile"> <h1 className='px-9 py-3 hover:bg-hero  hover:border-l-3 border-primary flex items-center gap-2'> <span className='text-lg'><FaRegUserCircle /></span>Profile</h1></Link>
-            <Link to="findjob"><h1 className='px-9 py-3 hover:bg-hero  hover:border-l-3 border-primary flex items-center gap-2'> <span className='text-lg'><MdOutlineLocationSearching /></span>Find Jobs</h1></Link>
+            <Link to="findjob"><h1 className='px-9 py-3 hover:bg-hero  hover:border-l-3 border-primary flex items-center gap-2'> <span className='text-lg'><MdOutlineLocationSearching /></span>Find staffs</h1></Link>
            <Link to="applied"> <h1 className='px-9 py-3 hover:bg-hero  hover:border-l-3 border-primary flex items-center gap-2'> <span className='text-lg'><FaHouseMedicalCircleCheck /></span>Applied</h1></Link>
             {/* <Link to="notification"><h1 className='px-9 py-3 hover:bg-hero  hover:border-l-3 border-primary flex items-center gap-2'> <span className='text-lg'><IoMdNotificationsOutline /></span>Notification</h1></Link> */}
             <Link to="savedjob"><h1 className='px-9 py-3 hover:bg-hero  hover:border-l-3 border-primary flex items-center gap-2'> <span className='text-lg'><FaRegBookmark /></span>Saved Jobs</h1></Link>
